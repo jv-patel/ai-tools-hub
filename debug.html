@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debug — AI Tools Hub</title>
+<style>
+  body{ background:#0B0D17; color:#ECEEFA; font-family: monospace; font-size:15px; padding:20px; line-height:1.7; }
+  .ok{ color:#2DE1C2; }
+  .bad{ color:#FF5C7A; font-weight:bold; }
+  h1{ font-size:18px; }
+  pre{ white-space:pre-wrap; word-break:break-all; background:#171A2B; padding:12px; border-radius:8px; }
+</style>
+</head>
+<body>
+<h1>AI Tools Hub — Script Diagnostic</h1>
+<div id="out">Running checks...</div>
+
+<script src="js/data.js" onerror="window.__err_data=true"></script>
+<script src="js/storage.js" onerror="window.__err_storage=true"></script>
+<script src="js/theme.js" onerror="window.__err_theme=true"></script>
+<script src="js/toast.js" onerror="window.__err_toast=true"></script>
+<script src="js/favorites.js" onerror="window.__err_favorites=true"></script>
+<script src="js/filter.js" onerror="window.__err_filter=true"></script>
+<script src="js/animation.js" onerror="window.__err_animation=true"></script>
+<script src="js/search.js" onerror="window.__err_search=true"></script>
+<script src="js/app.js" onerror="window.__err_app=true"></script>
+
+<script>
+  window.onerror = function(msg, src, line, col){
+    window.__lastError = msg + ' (file: ' + src.split('/').pop() + ', line ' + line + ', col ' + col + ')';
+  };
+
+  function check(name, fn){
+    try{
+      const val = fn();
+      return { name, ok: true, val };
+    }catch(e){
+      return { name, ok: false, val: e.message };
+    }
+  }
+
+  window.addEventListener('load', function(){
+    const results = [];
+    results.push(check('data.js loaded (404?)', () => window.__err_data ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('storage.js loaded (404?)', () => window.__err_storage ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('theme.js loaded (404?)', () => window.__err_theme ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('toast.js loaded (404?)', () => window.__err_toast ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('favorites.js loaded (404?)', () => window.__err_favorites ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('filter.js loaded (404?)', () => window.__err_filter ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('animation.js loaded (404?)', () => window.__err_animation ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('search.js loaded (404?)', () => window.__err_search ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+    results.push(check('app.js loaded (404?)', () => window.__err_app ? 'FILE FAILED TO LOAD (404)' : 'loaded ok'));
+
+    results.push(check('typeof TOOLS', () => typeof TOOLS));
+    results.push(check('TOOLS.length', () => TOOLS.length));
+    results.push(check('typeof CATEGORIES', () => typeof CATEGORIES));
+    results.push(check('CATEGORIES.length', () => CATEGORIES.length));
+    results.push(check('typeof Storage', () => typeof Storage));
+    results.push(check('typeof Favorites', () => typeof Favorites));
+    results.push(check('typeof Icons', () => typeof Icons));
+    results.push(check('typeof renderToolCard', () => typeof renderToolCard));
+    results.push(check('typeof renderCategoryCard', () => typeof renderCategoryCard));
+    results.push(check('typeof FilterPage', () => typeof FilterPage));
+    results.push(check('typeof Anim', () => typeof Anim));
+    results.push(check('typeof ThemeManager', () => typeof ThemeManager));
+    results.push(check('render one card (sample)', () => renderToolCard(TOOLS[0]).slice(0,60) + '...'));
+
+    let html = '';
+    results.forEach(r => {
+      const cls = r.ok && r.val !== 'undefined' && !String(r.val).includes('FAILED') ? 'ok' : 'bad';
+      html += '<div class="' + cls + '">' + r.name + ' -&gt; ' + r.val + '</div>';
+    });
+    html += '<h1>Uncaught window error (if any):</h1><pre class="bad">' + (window.__lastError || 'none captured') + '</pre>';
+    document.getElementById('out').innerHTML = html;
+  });
+</script>
+</body>
+</html>
