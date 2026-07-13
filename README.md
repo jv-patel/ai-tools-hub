@@ -32,25 +32,6 @@ Instant search across tool names, categories, and tags, with lightweight word-st
 
 No React, no Tailwind, no jQuery, no bundler â€” every page is a single, self-contained `.html` file with its CSS and JavaScript inlined. This keeps deployment to a single step: upload the files and go.
 
-## Project structure
-
-```text
-ai-tools-hub/
-index.html          Home
-explore.html        Search, filter & browse all tools
- categories.html      All 15 categories
- tool-details.html    Single tool detail (reads ?id= from the URL)
- top-rated.html       Tools rated 4.3â˜… and above
- new-tools.html       Sorted by date added
- favorites.html       Tools saved locally by the visitor
- about.html
- contact.html         Validated contact form
- faq.html             15-question accordion
- privacy.html
- terms.html
- 404.html
-```
-
 Each file is fully self-contained there are no separate `css/` or `js/` folders to keep in sync, which makes the project trivial to host anywhere that serves static files.
 
 ## Running locally
