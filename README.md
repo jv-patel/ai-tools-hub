@@ -1,21 +1,23 @@
+This project is without permission by author cannot right, if you have use to project without author permission then author is take a action for you and your project 
+
 # AI Tools Hub
 
-A curated directory of 50 AI tools across 15 categories â€” searchable, filterable, and saveable to favorites â€” built with plain HTML, CSS, and JavaScript. No frameworks, no build step, no dependencies.
+A curated directory of 50 AI tools across 15 categories ” searchable, filterable, and saveable to favorites ” built with plain HTML, CSS, and JavaScript.  frameworks, build step, dependencies.
 
-**Live site:** [jv-patel.github.io/ai-tools-hub](https://jv-patel.github.io/ai-tools-hub/)
+Live site: [jv-patel.github.io/ai-tools-hub](https://jv-patel.github.io/ai-tools-hub/)
 
 ---
 
-## Features
+Features
 
-- ðŸ” **Instant search** across tool names, categories, and tags, with lightweight word-stemming so related terms (e.g. "generator" / "generation") still match
-- ðŸ—‚ï¸ **Filter & sort** by category, pricing tier (Free / Freemium / Paid), rating, and recency
-- â¤ï¸ **Favorites** saved locally in the browser via `localStorage` â€” no account required
-- ðŸŒ— **Dark / light theme** toggle with saved preference
-- âœ¨ **Animated UI** â€” scroll-reveal cards, animated counters, hover/tilt effects, typing-effect search placeholder
-- ðŸ“„ **13 pages** â€” Home, Explore, Categories, Tool Details, Top Rated, New Tools, Favorites, About, Contact, FAQ, Privacy Policy, Terms & Conditions, and a custom 404
-- ðŸ“± **Fully responsive** â€” designed mobile-first for phones, tablets, and desktop
-- â™¿ **Accessible markup** â€” semantic HTML, ARIA labels on icon buttons, visible focus states
+Instant search across tool names, categories, and tags, with lightweight word-stemming so related terms (e.g. "generator" / "generation") still match
+**Filter & sort* by category, pricing tier (Free / Freemium / Paid), rating, and recency
+**Favorites* saved locally in the browser via `localStorage`  no account required
+ "*Dark / light theme* toggle with saved preference
+**Animated UI*  scroll-reveal cards, animated counters, hover/tilt effects, typing-effect search placeholder
+**13 pages*  Home, Explore, Categories, Tool Details, Top Rated, New Tools, Favorites, About, Contact, FAQ, Privacy Policy, Terms & Conditions, and a custom 404
+ **Fully responsive*  designed mobile-first for phones, tablets, and desktop
+**Accessible markup* semantic HTML, ARIA labels on icon buttons, visible focus states
 
 ## Tech stack
 
@@ -34,22 +36,22 @@ No React, no Tailwind, no jQuery, no bundler â€” every page is a single, se
 
 ```text
 ai-tools-hub/
-â”œâ”€â”€ index.html          Home
-â”œâ”€â”€ explore.html        Search, filter & browse all tools
-â”œâ”€â”€ categories.html      All 15 categories
-â”œâ”€â”€ tool-details.html    Single tool detail (reads ?id= from the URL)
-â”œâ”€â”€ top-rated.html       Tools rated 4.3â˜… and above
-â”œâ”€â”€ new-tools.html       Sorted by date added
-â”œâ”€â”€ favorites.html       Tools saved locally by the visitor
-â”œâ”€â”€ about.html
-â”œâ”€â”€ contact.html         Validated contact form
-â”œâ”€â”€ faq.html             15-question accordion
-â”œâ”€â”€ privacy.html
-â”œâ”€â”€ terms.html
-â””â”€â”€ 404.html
+index.html          Home
+explore.html        Search, filter & browse all tools
+ categories.html      All 15 categories
+ tool-details.html    Single tool detail (reads ?id= from the URL)
+ top-rated.html       Tools rated 4.3â˜… and above
+ new-tools.html       Sorted by date added
+ favorites.html       Tools saved locally by the visitor
+ about.html
+ contact.html         Validated contact form
+ faq.html             15-question accordion
+ privacy.html
+ terms.html
+ 404.html
 ```
 
-Each file is fully self-contained â€” there are no separate `css/` or `js/` folders to keep in sync, which makes the project trivial to host anywhere that serves static files.
+Each file is fully self-contained there are no separate `css/` or `js/` folders to keep in sync, which makes the project trivial to host anywhere that serves static files.
 
 ## Running locally
 
@@ -65,14 +67,14 @@ Then open `http://localhost:8000/index.html`. Double-clicking `index.html` direc
 
 Because every page is a single static file, deployment is a one-step upload:
 
-- **GitHub Pages** â€” push the files to a repository and enable Pages (Settings â†’ Pages â†’ Branch: `main`, folder: `/root`)
-- **Netlify / Vercel** â€” drag and drop the folder onto the dashboard
-- Any static host â€” just copy the files up, no build command needed
+ **GitHub Pages* push the files to a repository and enable Pages (Settings â†’ Pages  Branch: `main`, folder: `/root`)
+**Netlify / Vercel* drag and drop the folder onto the dashboard
+- Any static host  just copy the files up, no build command needed
 
 ## Data notes
 
 - All 50 tools are real, publicly known AI products, with original one-sentence descriptions written for this directory.
-- Favorites and theme preference are stored per-browser in `localStorage` â€” they are not synced across devices and will reset if browser data is cleared.
+- Favorites and theme preference are stored per-browser in `localStorage`  they are not synced across devices and will reset if browser data is cleared.
 - Tool "logos" are rendered as colored initials rather than image files, so the site needs zero external image assets to run.
 
 ## Contact
@@ -84,4 +86,4 @@ Because every page is a single static file, deployment is a one-step upload:
 
 ## License
 
-This project is free to use, modify, and distribute.
+This project is without permission by author cannot right, if you have use to project without author permission then author is take a action for you and your project 
